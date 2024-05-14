@@ -1,52 +1,36 @@
-import { sideRoutes } from "@/utils/routeConstants";
-import Image from "next/image";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import SidebarContent from "../ui/SidebarContent";
+import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
 
 const Sidebar = () => {
   return (
     <>
-      <div className="bg-slate-200/70 w-72 h-screen overflow-y-auto sticky top-0 left-0">
-        <div className="px-5 text-center py-10">
-          <div className="w-36 h-36 mx-auto rounded-full overflow-hidden object-center border">
-            <Image
-              src={"https://i.ibb.co/DYMCF0N/IMG-20220710-130806-698.jpg"}
-              width={1000}
-              height={1000}
-              className="size-[120%] object-cover"
-              alt="profile"
-            />
-          </div>
-          <h3 className="text-xl font-bold mt-8 mb-3.5 font-mono tracking-tight">
-            Janardhan Majumder
-          </h3>
-          <p className="text-[11px] uppercase leading-4 ">
-            <span className="text-green-600">Front-End</span>/
-            <span className="text-green-600">Backend</span> Developer in
-            Bangladesh{" "}
-          </p>
-          <div className="mt-8 text-[13px] uppercase flex flex-col gap-4">
-            <Link href={sideRoutes[0].path} className="w-fit mx-auto group">
-              <span className=" px-1">{sideRoutes[0].name}</span>
-              <div className="w-0 group-hover:w-full mx-auto duration-300 h-[1.3px] bg-green-400 mt-1" />
-            </Link>
-            {sideRoutes[0].children.map((nav) => (
-              <a
-                href={`#${nav.name}`}
-                key={nav.name}
-                className="w-fit mx-auto group"
-              >
-                <span className="px-1">{nav.name}</span>
-                <div className="w-0 group-hover:w-full mx-auto duration-300 h-[1.3px] bg-green-400 mt-1" />
-              </a>
-            ))}
-          </div>
+      <Sheet>
+        <div className="w-full md:hidden fixed top-0 left-0 z-10 py-2 px-4 flex justify-between items-center bg-[#c3285533]">
+          <SheetTrigger className="">
+            <RxHamburgerMenu size={26} />
+          </SheetTrigger>
+          <Link href={"/"}>
+            <h1 className="text-lg font-semibold font-serif">Janardhan</h1>
+          </Link>
         </div>
-        <div className="mt-8 border-t text-center pt-1 pb-2">
-          <span className="text-xs">@ 2024 All rights reserved!!</span>
-          <div>
-
-          </div>
-        </div>
+        <SheetContent
+          side={"left"}
+          className="w-[300px] h-screen overflow-y-auto pb-0"
+        >
+          <SidebarContent />
+        </SheetContent>
+      </Sheet>
+      <div className="bg-slate-200/70 min-w-64 lg:min-w-72 h-screen overflow-y-auto hidden md:block sticky top-0 left-0">
+        <SidebarContent />
       </div>
     </>
   );
