@@ -14,6 +14,7 @@ import helloAnimation from "@/assets/lottie/hello1.json";
 import frontendAnimation from "@/assets/lottie/frontend.json";
 import { cn } from "@/lib/utils";
 import { Wave1 } from "../ui/TextWaveAni";
+import { IoDownloadOutline } from "react-icons/io5";
 const bannerData = [
   {
     heading1: "Hi!",
@@ -63,14 +64,6 @@ const bannerData = [
 ];
 const Banner = () => {
   const [width, setWidth] = useState(0);
-  // const defaultOptions = {
-  //   loop: true,
-  //   autoplay: true,
-  //   animationData: developerAnimation,
-  //   rendererSettings: {
-  //     preserveAspectRatio: "xMidYMid slice",
-  //   },
-  // };
   useEffect(() => {
     setWidth(document.documentElement.clientWidth);
   }, []);
@@ -86,7 +79,7 @@ const Banner = () => {
       <Carousel
         plugins={[
           Autoplay({
-            delay: 3000,
+            delay: 5000,
           }),
         ]}
         opts={{
@@ -108,11 +101,12 @@ const Banner = () => {
                           ? `linear-gradient(90deg, rgba(249, 250, 250, 100), rgba(249, 250, 250, 90), rgba(249, 250, 250, 0.90), rgba(249, 250, 250, 0.0), rgba(249, 250, 250, 0.0)), url(${item.bg})`
                           : `linear-gradient(to bottom, rgba(135, 227, 208, 0.80), rgba(135, 227, 208, 0.88), rgba(249, 250, 250, 0.80), rgba(249, 250, 250, 0.30), rgba(249, 250, 250, 0.0)), url(${item.smBg})`,
                     backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",                    
                   }}
-                  className={`md:h-screen md:max-h-[600px] flex flex-col md:justify-center bg-gradient-to-r from-white via-white to-transparent bg-no-repeat bg-cover`}
+                  className={`md:h-screen md:max-h-[600px] xl:max-h-[700px] flex flex-col md:justify-center bg-gradient-to-r from-white via-white to-transparent bg-no-repeat bg-cover`}
                 >
-                  <div className="px-10 md:px-20 pt-32 md:pt-0 pb-10 space-y-4 text-center md:text-left">
+                  <div className="px-8 md:px-20 pt-32 md:pt-0 pb-10 space-y-4 text-center md:text-left">
                     <h1 className="text-4xl md:text-6xl font-semibold leading-tight lg:leading-snug font-serif">
                       {item.heading1}
                       <br />
@@ -123,13 +117,13 @@ const Banner = () => {
                       {item.des}
                     </p>
                     <div
-                      className={cn("pt-4", {
-                        "pt-2": index === 2,
+                      className={cn("pt-6", {
+                        "pt-4": index === 2,
                       })}
                     >
                       <a href='https://drive.google.com/file/d/1rE8Bp_NvdhsbgDD2S-kCYeJt34nRN2Ro/view?usp=drive_link' target='blank' >
-                        <Button variant={"outline"} className="shadow-sm animate-bounce">
-                          Download CV
+                        <Button variant={"outline"} size={"lg"} className="shadow-sm animate-bounce rounded-none border-gray-400 gap-2">
+                          Download CV <IoDownloadOutline />
                         </Button>
                       </a>
                     </div>
@@ -147,6 +141,12 @@ const Banner = () => {
                     </div>
                   </div>
                 </div>
+                {/* <div className={cn("hidden md:block", {
+                  "-my-14":
+                    index === 2,
+                })}>
+                  <Lottie options={item.animation} />
+                </div> */}
               </div>
             </CarouselItem>
           ))}

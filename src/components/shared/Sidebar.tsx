@@ -29,7 +29,7 @@ const Sidebar = () => {
           <SidebarContent />
         </SheetContent>
       </Sheet>
-      <div className="bg-slate-200/70 min-w-64 lg:min-w-72 h-screen overflow-y-auto hidden md:block sticky top-0 left-0">
+      <div className="bg-slate-200/70 w-full max-w-64 lg:max-w-72 h-screen overflow-y-auto hidden md:block sticky top-0 left-0">
         <SidebarContent />
       </div>
     </>

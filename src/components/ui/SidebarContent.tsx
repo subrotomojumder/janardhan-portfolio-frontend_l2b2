@@ -5,7 +5,7 @@ import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const SidebarContent = () => {
   return (
-    <div>
+    <div className="h-full flex flex-col justify-between">
       <div className="px-5 text-center py-10">
         <div className="w-36 h-36 mx-auto rounded-full overflow-hidden object-center border-8 avatar border-gradient-to-t from-red-500 to-blue-600">
           <Image
