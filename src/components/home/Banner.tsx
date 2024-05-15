@@ -13,6 +13,7 @@ import developerAnimation from "@/assets/lottie/developer1.json";
 import helloAnimation from "@/assets/lottie/hello1.json";
 import frontendAnimation from "@/assets/lottie/frontend.json";
 import { cn } from "@/lib/utils";
+import { Wave1 } from "../ui/TextWaveAni";
 const bannerData = [
   {
     heading1: "Hi!",
@@ -104,8 +105,8 @@ const Banner = () => {
                       width === 0
                         ? ""
                         : width > 768
-                        ? `linear-gradient(90deg, rgba(249, 250, 250, 100), rgba(249, 250, 250, 90), rgba(249, 250, 250, 0.90), rgba(249, 250, 250, 0.0), rgba(249, 250, 250, 0.0)), url(${item.bg})`
-                        : `linear-gradient(to bottom, rgba(135, 227, 208, 0.80), rgba(135, 227, 208, 0.88), rgba(249, 250, 250, 0.80), rgba(249, 250, 250, 0.30), rgba(249, 250, 250, 0.0)), url(${item.smBg})`,
+                          ? `linear-gradient(90deg, rgba(249, 250, 250, 100), rgba(249, 250, 250, 90), rgba(249, 250, 250, 0.90), rgba(249, 250, 250, 0.0), rgba(249, 250, 250, 0.0)), url(${item.bg})`
+                          : `linear-gradient(to bottom, rgba(135, 227, 208, 0.80), rgba(135, 227, 208, 0.88), rgba(249, 250, 250, 0.80), rgba(249, 250, 250, 0.30), rgba(249, 250, 250, 0.0)), url(${item.smBg})`,
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                   }}
@@ -115,7 +116,8 @@ const Banner = () => {
                     <h1 className="text-4xl md:text-6xl font-semibold leading-tight lg:leading-snug font-serif">
                       {item.heading1}
                       <br />
-                      {item.heading2}!
+
+                      <Wave1 text={`${item.heading2}!`} />
                     </h1>
                     <p className="max-w-[40ch] md:max-w-[50ch] mx-auto md:mx-0 text-slate-600 text-sm lg:text-base">
                       {item.des}
@@ -125,9 +127,11 @@ const Banner = () => {
                         "pt-2": index === 2,
                       })}
                     >
-                      <Button variant={"outline"} className="shadow-sm">
-                        Download CV
-                      </Button>
+                      <a href='https://drive.google.com/file/d/1rE8Bp_NvdhsbgDD2S-kCYeJt34nRN2Ro/view?usp=drive_link' target='blank' >
+                        <Button variant={"outline"} className="shadow-sm animate-bounce">
+                          Download CV
+                        </Button>
+                      </a>
                     </div>
                     <div
                       className={cn("pt-2 md:hidden", {
@@ -138,25 +142,17 @@ const Banner = () => {
                         "-my-14":
                           index === 2,
                       })}>
-                      <Lottie options={item.animation} />
-
+                        <Lottie options={item.animation} />
                       </div>
                     </div>
                   </div>
-                  {/* <Image
-                src={item.bg}
-                width={1000}
-                height={1000}
-                className="size-[120%] object-cover"
-                alt="profile"
-              /> */}
                 </div>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
       </Carousel>
-    </div>
+    </div >
   );
 };
 
