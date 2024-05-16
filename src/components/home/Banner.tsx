@@ -35,7 +35,7 @@ const bannerData = [
     heading1: "Hi! I'm a",
     heading2: "Web Developer",
     des: "Proficient MERN stack developer specializing in building robust web applications with MongoDB, Express.js, React, and Node.js technologies.",
-    bg: "https://i.ibb.co/0C24Nkr/mern-stack1.jpg",
+    bg: "https://i.ibb.co/6P6tsbc/web-development.jpg",
     smBg: "https://i.ibb.co/3CF7wxP/woman1.jpg",
     animation: {
       loop: true,
@@ -100,7 +100,7 @@ const Banner = () => {
                         : width > 768
                           ? `linear-gradient(90deg, rgba(249, 250, 250, 100), rgba(249, 250, 250, 90), rgba(249, 250, 250, 0.90), rgba(249, 250, 250, 0.0), rgba(249, 250, 250, 0.0)), url(${item.bg})`
                           : `linear-gradient(to bottom, rgba(135, 227, 208, 0.80), rgba(135, 227, 208, 0.88), rgba(249, 250, 250, 0.80), rgba(249, 250, 250, 0.30), rgba(249, 250, 250, 0.0)), url(${item.smBg})`,
-                    backgroundSize: "cover",
+                    backgroundSize: "100%",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",                    
                   }}
