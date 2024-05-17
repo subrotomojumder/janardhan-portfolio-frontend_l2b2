@@ -26,7 +26,7 @@ const About = () => {
     >
       <div className="space-y-3">
         <p className="text-xs text-slate-400 font-mono">ABOUT US</p>
-        <h5 className="text-lg font-medium font-serif text-slate-600" data-aos="fade-up" data-aos-anchor-placement="bottom-center">WHO AM I?</h5>
+        <h5 className="text-lg md:text-xl font-medium font-serif text-slate-600" data-aos="fade-up" data-aos-anchor-placement="bottom-center">WHO AM I?</h5>
       </div>
       <div className="space-y-4 font-sans text-slate-500">
         <p data-aos="fade-up" data-aos-anchor-placement="bottom-center"><b>Hi! I&apos;m Janardhan Majumder</b> working in Web Development for a long time, Expertise in HTML, CSS, and JavaScript to craft dynamic, user-centric digital experiences. With three years of experience, specializes in creating responsive, visually stunning websites that align with client objectives and industry standards. </p>
