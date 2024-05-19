@@ -86,7 +86,7 @@ const Banner = () => {
           loop: true,
           duration: 0,
         }}
-        className="relative mx-auto"
+        className="relative"
       >
         <CarouselContent className="">
           {bannerData.map((item, index) => (
@@ -98,11 +98,11 @@ const Banner = () => {
                       width === 0
                         ? ""
                         : width > 768
-                          ? `linear-gradient(90deg, rgba(249, 250, 250, 100), rgba(249, 250, 250, 90), rgba(249, 250, 250, 0.90), rgba(249, 250, 250, 0.0), rgba(249, 250, 250, 0.0)), url(${item.bg})`
-                          : `linear-gradient(to bottom, rgba(135, 227, 208, 0.80), rgba(135, 227, 208, 0.88), rgba(249, 250, 250, 0.80), rgba(249, 250, 250, 0.30), rgba(249, 250, 250, 0.0)), url(${item.smBg})`,
-                    backgroundSize: "100%",
+                        ? `linear-gradient(90deg, rgba(249, 250, 250, 100), rgba(249, 250, 250, 90), rgba(249, 250, 250, 0.90), rgba(249, 250, 250, 0.0), rgba(249, 250, 250, 0.0)), url(${item.bg})`
+                        : `linear-gradient(to bottom, rgba(135, 227, 208, 0.80), rgba(135, 227, 208, 0.88), rgba(249, 250, 250, 0.80), rgba(249, 250, 250, 0.30), rgba(249, 250, 250, 0.0)), url(${item.smBg})`,
+                    backgroundSize: "cover",
                     backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",                    
+                    backgroundRepeat: "no-repeat",
                   }}
                   className={`md:h-screen md:max-h-[600px] xl:max-h-[700px] flex flex-col md:justify-center bg-gradient-to-r from-white via-white to-transparent bg-no-repeat bg-cover`}
                 >
@@ -121,8 +121,15 @@ const Banner = () => {
                         "pt-4": index === 2,
                       })}
                     >
-                      <a href='https://drive.google.com/file/d/1rE8Bp_NvdhsbgDD2S-kCYeJt34nRN2Ro/view?usp=drive_link' target='blank' >
-                        <Button variant={"outline"} size={"lg"} className="shadow-sm animate-bounce rounded-none border-gray-400 gap-2">
+                      <a
+                        href="https://drive.google.com/file/d/1rE8Bp_NvdhsbgDD2S-kCYeJt34nRN2Ro/view?usp=drive_link"
+                        target="blank"
+                      >
+                        <Button
+                          variant={"outline"}
+                          size={"lg"}
+                          className="shadow-sm animate-bounce rounded-none border-gray-400 gap-2"
+                        >
                           Download CV <IoDownloadOutline />
                         </Button>
                       </a>
@@ -132,10 +139,11 @@ const Banner = () => {
                         "pt-0 ": index === 2,
                       })}
                     >
-                      <div className={cn("", {
-                        "-my-14":
-                          index === 2,
-                      })}>
+                      <div
+                        className={cn("", {
+                          "-my-14": index === 2,
+                        })}
+                      >
                         <Lottie options={item.animation} />
                       </div>
                     </div>
@@ -152,7 +160,7 @@ const Banner = () => {
           ))}
         </CarouselContent>
       </Carousel>
-    </div >
+    </div>
   );
 };
 

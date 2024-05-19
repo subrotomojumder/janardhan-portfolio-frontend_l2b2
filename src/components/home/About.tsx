@@ -13,7 +13,7 @@ const About = () => {
       aos: "zoom-in-down"
     },
     {
-      content: "20+",
+      content: "25+",
       status: "Technology",
       aos: "zoom-in-left"
     },

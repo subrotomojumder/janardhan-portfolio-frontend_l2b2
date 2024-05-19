@@ -2,6 +2,7 @@ import { sideRoutes } from "@/utils/routeConstants";
 import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import SidebarEmail from "./SidebarEmail";
 
 const SidebarContent = () => {
   return (
@@ -16,9 +17,10 @@ const SidebarContent = () => {
             alt="profile"
           />
         </div>
-        <h3 className="text-xl font-bold mt-8 mb-3.5 font-mono tracking-tight">
+        <h3 className="text-xl font-bold mt-8 font-mono tracking-tight">
           Janardhan Majumder
         </h3>
+        <SidebarEmail />
         <p className="text-[11px] uppercase leading-4 ">
           <span className="text-green-600">Front-End</span>/
           <span className="text-green-600">Backend</span> Developer in

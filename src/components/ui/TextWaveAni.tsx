@@ -1,4 +1,4 @@
-import { Wave, Random } from 'react-animated-text';
+import { Wave } from 'react-animated-text';
 
 const exampleStyle = {
     display: 'inline-block',

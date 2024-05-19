@@ -1,13 +1,13 @@
 import { TExperience } from "@/types/experience.type";
 import React from "react";
 import { PiPenThin } from "react-icons/pi";
-import DateShow from "../ui/DateShow";
 import { cn } from "@/lib/utils";
 
 const WorkExperience = async () => {
-  const res = await fetch(`${process.env.SERVER_URL}/experiences`);
+  const res = await fetch(`${process.env.SERVER_URL}/experiences`, {
+    next: { revalidate: 30 },
+  });
   const { data } = await res.json();
-  console.log(data);
   return (
     <div
       id="experience"
@@ -49,7 +49,7 @@ const WorkExperience = async () => {
               <div
                 data-aos="fade-right"
                 data-aos-delay="300"
-                className="bg-blue-100 flex-1 py-6 px-8 relative ml-5 rounded-sm space-y-3 text-slate-600"
+                className="bg-blue-100 flex-1 pt-4 pb-8 px-8 relative ml-5 rounded-sm space-y-3 text-slate-600"
               >
                 <div
                   className="h-6 w-[17px] bg-blue-100 absolute -left-4 top-4"
@@ -57,7 +57,7 @@ const WorkExperience = async () => {
                 ></div>
                 <div>
                   <h6 className="font-semibold">{experience.companyName}</h6>
-                  <p className="text-sm text-slate-400">
+                  <p className="text-xs md:text-sm text-slate-400">
                     {experience.location}
                   </p>
                 </div>
