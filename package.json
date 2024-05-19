@@ -13,6 +13,7 @@
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tabs": "^1.0.4",
+    "@types/react-stars": "^2.2.4",
     "aos": "^3.0.0-beta.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -27,6 +28,7 @@
     "react-loading": "^2.0.3",
     "react-lottie": "^1.2.4",
     "react-skillbars": "^2.2.0",
+    "react-stars": "^2.2.5",
     "sharp": "^0.33.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"

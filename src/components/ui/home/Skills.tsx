@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SkillContent from "../ui/SkillContent";
+import SkillContent from "../SkillContent";
 
 const Skills = async () => {
   const res = await fetch(`${process.env.SERVER_URL}/skills?sort=createdAt`, {
@@ -41,8 +41,8 @@ const Skills = async () => {
         >
           With a keen eye for detail and a passion for clean, efficient code, I
           specialize in building exceptional web experiences that captivate
-          users. I have experience working with{" "}
-          <b>more than 25 technology</b> packages and libraries.
+          users. I have experience working with <b>more than 25 technology</b>{" "}
+          packages and libraries.
         </p>
         <div className="border-t pt-10">
           <SkillContent skills={data} />
