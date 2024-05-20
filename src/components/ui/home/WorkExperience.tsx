@@ -54,7 +54,7 @@ const WorkExperience = async () => {
                 <div
                   className="h-6 w-[17px] bg-blue-100 absolute -left-4 top-4"
                   style={{ clipPath: "polygon(100% 0, 0 59%, 100% 100%)" }}
-                ></div>
+                />
                 <div>
                   <h6 className="font-semibold">{experience.companyName}</h6>
                   <p className="text-xs md:text-sm text-slate-400">
@@ -62,7 +62,7 @@ const WorkExperience = async () => {
                   </p>
                 </div>
                 <h4 className="text-xl lg:text-2xl font-medium">
-                  <span className="font-medium9">{experience.designation}</span>{" "}
+                  <span className="">{experience.designation}</span>{" "}
                   <span className="font-[200] capitalize text-sm lg:text-base -tracking-wider">
                     (
                     {new Date(experience.dateOfEntry).toDateString() +

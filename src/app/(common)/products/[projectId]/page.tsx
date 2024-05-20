@@ -1,6 +1,9 @@
 import Rating from "@/components/ui/Rating";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import ProjectDetailsImage from "@/components/ui/projectDetails/projectDetailsImage";
-import { Car, Repeat1 } from "lucide-react";
+import { Car, Droplets, Repeat1, TimerReset } from "lucide-react";
+import Link from "next/link";
 
 type TProjectDetailsProps = {
   params: {
@@ -11,68 +14,90 @@ const ProductDetails = async ({ params }: TProjectDetailsProps) => {
   const { projectId } = params;
   const res = await fetch(`${process.env.SERVER_URL}/projects/${projectId}`);
   const { data: project } = await res.json();
-  console.log(project);
   return (
-    <div className="min-h-screen flex flex-col justify-center py-32 px-8 md:px-20 space-y-16 relative">
-      <div className="py-4">
-        <ProjectDetailsImage images={project.images} />
-        <div className="p-2 space-y-7">
-          <div className="space-y-3">
-            <h3 className="text-2xl font-bold">{project.title}</h3>
-            <div className="flex justify-start items-center gap-3">
-              <h5 className="text-xl font-bold">${project.projectType}</h5>
-              <div className="h-3.5 w-0.5 bg-gray-400" />
-              <Rating rate={5} size={24} />
-              <div className="h-3.5 w-0.5 bg-gray-400" />
-              <span className="text-sm text-green-500">(43 Reviews)</span>
-            </div>
-          </div>
-          <div className="h-[1.5px] bg-gray-200" />
-          <p className="text-sm font-medium text-gray-600">{project.des}</p>
-          <ul className="space-y-1 list-disc pl-6 text-sm font-medium text-gray-700">
-            {project.desBullet}
-          </ul>
-          <div className="space-y-2 text-sm font-medium text-gray-700">
-            <div className="flex justify-start gap-3">
-              <Car />
-              <span>Delivers in: 3-7 Working Days Shipping & Return</span>
-            </div>
-            <div className="flex justify-start gap-3">
-              <Repeat1 />
-              <span>Delivers in: 3-7 Working Days Shipping & Return</span>
-            </div>
+    <div
+      className="min-h-screen flex flex-col justify-center pt-16 md:pt-12 pb-32 space-y-16 relative"
+      //  style={{
+      //   background: `linear-gradient(90deg, rgba(255, 99, 71, 0.1), rgba(0, 0, 0, 0)), url(https://i.ibb.co/NsvqYx8/category-BG.jpg)`,
+      //   backgroundSize: "cover",
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundAttachment: "fixed",
+      // }}
+    >
+      <ProjectDetailsImage images={project.images} className="px-5 md:px-10" />
+      <div className="py-6 px-10 md:px-20 space-y-7">
+        <div className="space-y-4">
+          <h3 className="text-3xl font-bold">{project.title}</h3>
+          <div className="flex justify-start items-center gap-5">
+            <h5 className="text-xl font-bold capitalize text-slate-600">
+              {project.projectType}
+            </h5>
+            <div className="h-3.5 w-0.5 bg-gray-400" />
+            <Rating rate={5} size={24} />
+            <div className="h-3.5 w-0.5 bg-gray-400" />
+            <span className="text-sm text-green-500">(43 Reviews)</span>
           </div>
         </div>
-      </div>
-      <div className="space-y-5 my-8">
-        <h5 className="text-xl font-semibold text-gray-700">Description:</h5>
-        <p className="text-sm font-medium text-gray-600">
-          Welcome to our exclusive Baby Care Flash Sale! Explore unbeatable
-          discounts on a wide range of essential products for your little one.
-          From diapers and formula to toys and clothing, find everything you
-          need at incredible prices. Act fast – this limited-time offer wont
-          last long! Simply browse our selection, add your favorite items to
-          your cart, and proceed to checkout to secure your savings. Dont miss
-          this opportunity to stock up on high-quality baby essentials while
-          enjoying significant discounts. Hurry, shop now and give your baby the
-          care they deserve at prices youll love!
-        </p>
-        <ul className="space-y-2 list-disc pl-5 text-sm font-medium text-gray-700">
-          <li>
-            Welcome to our Baby Care Flash Sale! Discover incredible discounts
-            on essential products for your little one. Limited time offer. Stock
-            up now on diapers, formula, toys, and more. Dont miss out!
-          </li>
-          <li>Create a safe environment by baby-proofing your home.</li>
-          <li>
-            Explore our Baby Care Flash Sale for exclusive discounts on
-            essential products! Limited time offer. Stock up on diapers,
-            formula, toys, and more.
-          </li>
-          <li>
-            Stock up on diapers, formula, clothing, and more while supplies last
-          </li>
+        <div className="h-[1.5px] bg-gray-200" />
+        <div className="flex flex-wrap gap-4 items-center ">
+          {/* <span className="font-medium text-slate-600">Project Link :</span> */}
+          {Object.entries(project.links).map(
+            ([name, link], inx) =>
+              name !== "_id" && (
+                <a href={link as string} target="_blank" key={inx}>
+                  <Button
+                    variant="link"
+                    className="border capitalize hover:text-purple-600"
+                  >
+                    {name}
+                  </Button>
+                </a>
+              )
+          )}
+        </div>
+        <p className="text-sm font-medium text-slate-600">{project.des}</p>
+        <ul className="space-y-1 list-disc text-sm font-medium text-gray-700 pl-8">
+          {project.desBullet?.map((bullet: string, inx: number) => (
+            <li key={inx}>{bullet}</li>
+          ))}
         </ul>
+        <div className="space-y-4">
+          <h5 className="text-xl font-semibold text-sate-600">Technologies:</h5>
+          <div className="flex flex-wrap gap-3">
+            {project.technologies?.map((item: string, inx: number) => (
+              <Badge variant="outline" key={inx} className={"bg-green-100"}>
+                {item}
+              </Badge>
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-2 text-sm font-medium text-gray-700">
+          <div className="flex justify-start gap-3">
+            <Droplets />
+            <span>
+              Posted date at: {new Date(project.createdAt).toDateString()}
+            </span>
+          </div>
+          <div className="flex justify-start gap-3">
+            <TimerReset />
+            <span>
+              Updated date at: {new Date(project.createdAt).toDateString()}
+            </span>
+          </div>
+        </div>
+        <p className="text-sm font-medium text-slate-600">
+          DevConnect is a dynamic collaboration platform for developers, crafted
+          using the MERN stack (MongoDB, Express, React, Node.js). It allows
+          users to create and join projects, share code snippets, and manage
+          tasks collaboratively. Features include real-time messaging, project
+          boards, issue tracking, and version control integration. Users can set
+          up profiles, showcase their skills, and connect with other developers.
+          DevConnect fosters a community-driven environment, supporting both
+          individual and team projects. With its intuitive and responsive
+          design, the platform enhances productivity and networking for
+          developers, making it an essential tool for any development project.
+        </p>
       </div>
     </div>
   );

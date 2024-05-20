@@ -1,3 +1,4 @@
+"use client";
 import {
   Sheet,
   SheetContent,
@@ -9,13 +10,28 @@ import {
 import SidebarContent from "../ui/SidebarContent";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+// import { useRouter } from "next/router";
 
 const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+//   const router = useRouter();
+
+//   const handleRouteChange = () => {
+//     setIsOpen(false);
+//   };
+
+//   useEffect(() => {
+//     router.events.on("routeChangeStart", handleRouteChange);
+//     return () => {
+//       router.events.off("routeChangeStart", handleRouteChange);
+//     };
+//   }, [router]);
   return (
     <>
-      <Sheet>
-        <div className="w-full md:hidden fixed top-0 left-0 z-10 py-2 px-4 flex justify-between items-center bg-[#c3285533]">
-          <SheetTrigger className="">
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
+        <div className="w-full md:hidden fixed top-0 left-0 z-10 py-2 px-4 flex justify-between items-center bg-[#2837c388] text-white">
+          <SheetTrigger>
             <RxHamburgerMenu size={26} />
           </SheetTrigger>
           <Link href={"/"}>
