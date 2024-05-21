@@ -86,18 +86,21 @@ const ProductDetails = async ({ params }: TProjectDetailsProps) => {
             </span>
           </div>
         </div>
-        <p className="text-sm font-medium text-slate-600">
-          DevConnect is a dynamic collaboration platform for developers, crafted
-          using the MERN stack (MongoDB, Express, React, Node.js). It allows
-          users to create and join projects, share code snippets, and manage
-          tasks collaboratively. Features include real-time messaging, project
-          boards, issue tracking, and version control integration. Users can set
-          up profiles, showcase their skills, and connect with other developers.
-          DevConnect fosters a community-driven environment, supporting both
-          individual and team projects. With its intuitive and responsive
-          design, the platform enhances productivity and networking for
-          developers, making it an essential tool for any development project.
-        </p>
+        <div className="pt-12">
+          <p className="text-sm font-medium text-slate-600">
+            DevConnect is a dynamic collaboration platform for developers,
+            crafted using the MERN stack (MongoDB, Express, React, Node.js). It
+            allows users to create and join projects, share code snippets, and
+            manage tasks collaboratively. Features include real-time messaging,
+            project boards, issue tracking, and version control integration.
+            Users can set up profiles, showcase their skills, and connect with
+            other developers. DevConnect fosters a community-driven environment,
+            supporting both individual and team projects. With its intuitive and
+            responsive design, the platform enhances productivity and networking
+            for developers, making it an essential tool for any development
+            project.
+          </p>
+        </div>
       </div>
     </div>
   );

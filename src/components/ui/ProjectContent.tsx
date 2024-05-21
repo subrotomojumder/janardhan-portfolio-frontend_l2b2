@@ -36,9 +36,7 @@ const ProjectContent = ({ projects }: { projects: TProject[] }) => {
             .map((project) => (
               <Link href={`products/${project._id}`} key={project._id}>
                 <div
-                  data-aos="fade-right"
-                  data-aos-delay="300"
-                  className="relative group p-6 bg-white text-center shadow-md hover:shadow-xl hover:scale-[1.02] duration-100"
+                  className="relative p-6 bg-white text-center shadow-md hover:shadow-xl duration-100 group hover:scale-[1.05] "
                 >
                   {project.images && (
                     <div
@@ -61,7 +59,7 @@ const ProjectContent = ({ projects }: { projects: TProject[] }) => {
                     {project.title}
                   </h1>
                   <Badge
-                    className="rounded-sm bg-green-500 capitalize mt-3"
+                    className="rounded-sm bg-green-500 capitalize mt-4"
                     variant={"destructive"}
                   >
                     {project.projectType}
@@ -84,7 +82,7 @@ const ProjectContent = ({ projects }: { projects: TProject[] }) => {
                     )}
                   />
                   <div className="bg-black/50 absolute inset-0 w-full rounded-sm flex justify-center items-center duration-500 opacity-0 group-hover:opacity-100">
-                    <Button variant="outline" className="rounded-full">
+                    <Button variant="outline" className="rounded-full mb-1">
                       View Details
                     </Button>
                   </div>

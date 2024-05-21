@@ -1,3 +1,4 @@
+import { LocateFixed, Mail, MapPinned, PhoneCall } from "lucide-react";
 import { Button } from "../button";
 const About = () => {
   const topStatus = [
@@ -70,15 +71,50 @@ const About = () => {
           </div>
         ))}
       </div>
-      <div className="bg-yellow-500/90 p-8">
-        <h3 className="text-3xl mb-8 font-serif leading-snug">
+      <div className="bg-yellow-500/90 px-8 py-12 text-center text-white">
+        <h3 className=" text-center text-2xl md:text-3xl font-serif leading-snug mb-8">
           I am happy to know you <br /> that 50+ projects done successfully!
         </h3>
-        <a href="mailto:janardhanmajumder03@gmail.com" target="blank">
+        <div className="mb-8">
+          <div className="flex justify-center items-center">
+            <PhoneCall />
+            <a href="tel:+8801631901754" target="blank">
+              <Button
+                variant="link"
+                className="text-base tracking-wide text-white"
+              >
+                +8801631901754
+              </Button>
+            </a>
+          </div>
+          <div className="flex justify-center items-center">
+            <Mail />
+            <a href="mailto:janardhan.md03@gmail.com" target="blank">
+              <Button
+                variant="link"
+                className="text-base tracking-wide text-white"
+              >
+                janardhan.md03@gmail.com
+              </Button>
+            </a>
+          </div>
+          <div className="flex justify-center items-center">
+          <MapPinned />
+            <a href="https://maps.app.goo.gl/LxRxvCxovRvPQ3sv9" target="blank">
+              <Button
+                variant="link"
+                className="text-base tracking-wide text-white"
+              >
+                Noakhali , Bangladesh
+              </Button>
+            </a>
+          </div>
+        </div>
+        <a href="mailto:janardhan.md03@gmail.com" target="blank">
           <Button
             variant={"outline"}
             size={"sm"}
-            className="rounded-none border-gray-500 bg-yellow-500/80 hover:bg-yellow-500/80"
+            className="rounded-none border-w text-white hover:text-white bg-yellow-500/80 hover:bg-yellow-500/80 "
           >
             HIRE ME
           </Button>
