@@ -1,4 +1,4 @@
-import ProjectContent from "../ProjectContent";
+import ProjectContent from "../ui/ProjectContent";
 
 const Projects = async () => {
   const res = await fetch(`${process.env.SERVER_URL}/projects`, {

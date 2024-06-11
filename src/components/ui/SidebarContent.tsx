@@ -32,14 +32,14 @@ const SidebarContent = () => {
             <div className="w-0 group-hover:w-full mx-auto duration-300 h-[1.3px] bg-green-400 mt-1" />
           </Link>
           {sideRoutes[0].children.map((nav) => (
-            <a
-              href={`#${nav.name}`}
+            <Link
+              href={`/#${nav.name}`}
               key={nav.name}
               className="w-fit mx-auto group"
             >
               <span className="px-1">{nav.name}</span>
               <div className="w-0 group-hover:w-full mx-auto duration-300 h-[1.3px] bg-green-400 mt-1" />
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -56,7 +56,6 @@ const SidebarContent = () => {
             <FaLinkedin className="hover:text-orange-400 hover:text-3xl mx-2 hover:mx-[5px] hover:mt-[-3px]" />
           </a>
           <a href="https://web.facebook.com/subroto.mojumder.14" target="blank">
-            {" "}
             <FaFacebook className="hover:text-orange-400 hover:text-3xl mx-2 hover:mx-[5px] hover:mt-[-3px]" />
           </a>
           <a

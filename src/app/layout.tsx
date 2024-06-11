@@ -10,7 +10,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Janardhan Majumder | Home",
+  title: "JANARDHAN | Home",
   description: "Passionate web developer skilled in creating dynamic, user-friendly websites with innovative design and seamless functionality. Web Developer.",
 };
 

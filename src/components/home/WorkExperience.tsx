@@ -12,6 +12,7 @@ const WorkExperience = async () => {
     <div
       id="experience"
       className="min-h-screen flex flex-col justify-center py-32 px-8 md:px-20 space-y-16 relative"
+      
     >
       <div className="space-y-3">
         <p className="text-xs text-slate-400 font-mono">EXPERIENCE</p>

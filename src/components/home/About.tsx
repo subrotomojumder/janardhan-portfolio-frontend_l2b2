@@ -1,5 +1,5 @@
 import { LocateFixed, Mail, MapPinned, PhoneCall } from "lucide-react";
-import { Button } from "../button";
+import { Button } from "../ui/button";
 const About = () => {
   const topStatus = [
     {
@@ -77,18 +77,18 @@ const About = () => {
         </h3>
         <div className="mb-8">
           <div className="flex justify-center items-center">
-            <PhoneCall />
+            <PhoneCall size={21} />
             <a href="tel:+8801631901754" target="blank">
               <Button
                 variant="link"
                 className="text-base tracking-wide text-white"
               >
-                +8801631901754
+                +880 1631-901754
               </Button>
             </a>
           </div>
           <div className="flex justify-center items-center">
-            <Mail />
+            <Mail size={21} />
             <a href="mailto:janardhan.md03@gmail.com" target="blank">
               <Button
                 variant="link"
@@ -99,7 +99,7 @@ const About = () => {
             </a>
           </div>
           <div className="flex justify-center items-center">
-          <MapPinned />
+            <MapPinned size={21} />
             <a href="https://maps.app.goo.gl/LxRxvCxovRvPQ3sv9" target="blank">
               <Button
                 variant="link"

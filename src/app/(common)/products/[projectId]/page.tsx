@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import ProjectDetailsImage from "@/components/ui/projectDetails/projectDetailsImage";
 import { Car, Droplets, Repeat1, TimerReset } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 
 type TProjectDetailsProps = {
@@ -10,6 +11,12 @@ type TProjectDetailsProps = {
     [index: string]: unknown;
   };
 };
+export const metadata: Metadata = {
+  title: "JANARDHAN | PROJECT",
+  description:
+    "Passionate web developer skilled in creating dynamic, user-friendly websites with innovative design and seamless functionality. Web Developer.",
+};
+
 const ProductDetails = async ({ params }: TProjectDetailsProps) => {
   const { projectId } = params;
   const res = await fetch(`${process.env.SERVER_URL}/projects/${projectId}`);
@@ -24,7 +31,12 @@ const ProductDetails = async ({ params }: TProjectDetailsProps) => {
       //   backgroundAttachment: "fixed",
       // }}
     >
-      <ProjectDetailsImage images={project.images} className="px-5 md:px-10" />
+      {project.images.length && (
+        <ProjectDetailsImage
+          images={project.images}
+          className="px-5 md:px-10"
+        />
+      )}
       <div className="py-6 px-10 md:px-20 space-y-7">
         <div className="space-y-4">
           <h3 className="text-3xl font-bold">{project.title}</h3>
@@ -33,7 +45,7 @@ const ProductDetails = async ({ params }: TProjectDetailsProps) => {
               {project.projectType}
             </h5>
             <div className="h-3.5 w-0.5 bg-gray-400" />
-            <Rating rate={5} size={24} />
+            <Rating rate={4} size={24} />
             <div className="h-3.5 w-0.5 bg-gray-400" />
             <span className="text-sm text-green-500">(43 Reviews)</span>
           </div>

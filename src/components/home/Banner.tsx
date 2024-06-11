@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "../button";
+import { Button } from "../ui/button";
 import Lottie from "react-lottie";
 import {
   Carousel,
@@ -8,12 +8,12 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useState } from "react";
-import SquareLoading from "../SquareLoading";
+import SquareLoading from "../ui/SquareLoading";
 import developerAnimation from "@/assets/lottie/developer1.json";
 import helloAnimation from "@/assets/lottie/hello1.json";
 import frontendAnimation from "@/assets/lottie/frontend.json";
 import { cn } from "@/lib/utils";
-import { Wave1 } from "../TextWaveAni";
+import { Wave1 } from "../ui/TextWaveAni";
 import { IoDownloadOutline } from "react-icons/io5";
 const bannerData = [
   {

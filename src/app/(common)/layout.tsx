@@ -7,7 +7,7 @@ const CommonLayout = ({ children }: { children: React.ReactNode }) => {
         <Sidebar />
       <div className="max-w-[calc(100%)] md:max-w-[calc(100%-256px)] lg:max-w-[calc(100%-288px)] flex-1">
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );

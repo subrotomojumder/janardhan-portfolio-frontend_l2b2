@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SkillContent from "../SkillContent";
+import SkillContent from "../ui/SkillContent";
 
 const Skills = async () => {
   const res = await fetch(`${process.env.SERVER_URL}/skills?sort=createdAt`, {
@@ -21,7 +21,8 @@ const Skills = async () => {
   return (
     <div
       id="skills"
-      className="min-h-screen flex flex-col justify-center py-32 lg:py-40 px-8 md:px-20 space-y-16 relative"
+      className="min-h-screen flex flex-col justify-center py-20 lg:py-20 px-8 md:px-20 space-y-16 relative bg-yellow-50"
+      
     >
       <div className="space-y-3">
         <p className="text-xs text-slate-400 font-mono">MY SPECIALTY</p>

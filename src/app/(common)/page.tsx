@@ -1,8 +1,10 @@
-import About from "@/components/ui/home/About";
-import Banner from "@/components/ui/home/Banner";
-import Projects from "@/components/ui/home/Projects";
-import Skills from "@/components/ui/home/Skills";
-import WorkExperience from "@/components/ui/home/WorkExperience";
+import About from "@/components/home/About";
+import Banner from "@/components/home/Banner";
+import Blogs from "@/components/home/Blogs";
+import Contact from "@/components/home/Contact";
+import Projects from "@/components/home/Projects";
+import Skills from "@/components/home/Skills";
+import WorkExperience from "@/components/home/WorkExperience";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <Skills />
       <WorkExperience />
       <Projects />
+      <Blogs />
+      <Contact />
     </main>
   );
 }
