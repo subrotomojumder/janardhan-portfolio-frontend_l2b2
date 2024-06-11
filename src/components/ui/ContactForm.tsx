@@ -64,7 +64,14 @@ const ContactForm = () => {
                   type="text"
                   placeholder="Name"
                   className="border-none text-base rounded-none focus:outline-none focus:ring-0 focus-visible:ring-0 b ring-offset-0 bg-purple-100 py-7 px-4 shadow-sm placeholder:text-gray-400"
-                  data-aos="fade-left"
+                  data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center"
+
                 />
               </FormControl>
               <FormMessage />

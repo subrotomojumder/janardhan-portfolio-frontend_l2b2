@@ -1,7 +1,9 @@
+import Link from "next/link";
 import ProjectContent from "../ui/ProjectContent";
+import { Button } from "../ui/button";
 
 const Projects = async () => {
-  const res = await fetch(`${process.env.SERVER_URL}/projects`, {
+  const res = await fetch(`${process.env.SERVER_URL}/projects?limit=6`, {
     next: { revalidate: 30 },
   });
   const { data } = await res.json();
@@ -27,6 +29,11 @@ const Projects = async () => {
         </h5>
       </div>
       <ProjectContent projects={data} />
+      <div className="text-center">
+        <Link href={`projects`}>
+          <Button variant="link">See All...</Button>
+        </Link>
+      </div>
     </div>
   );
 };

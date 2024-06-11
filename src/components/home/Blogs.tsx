@@ -2,9 +2,10 @@ import { TBlog } from "@/types/blog.type";
 import { MessageCircle, MessageSquare } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 const Blogs = async () => {
-  const res = await fetch(`${process.env.SERVER_URL}/blogs`, {
+  const res = await fetch(`${process.env.SERVER_URL}/blogs?limit=6`, {
     next: { revalidate: 30 },
   });
   const { data: blogs } = await res.json();
@@ -60,6 +61,11 @@ const Blogs = async () => {
             </div>
           </Link>
         ))}
+      </div>
+      <div className="text-center">
+        <Link href={`blogs`}>
+          <Button variant="link">See All...</Button>
+        </Link>
       </div>
     </div>
   );

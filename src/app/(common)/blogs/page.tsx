@@ -2,7 +2,6 @@ import { TBlog } from "@/types/blog.type";
 import { MessageSquare } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const AllBlogs = async () => {
   const res = await fetch(`${process.env.SERVER_URL}/blogs`, {

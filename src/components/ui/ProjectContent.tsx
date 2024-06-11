@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TProject } from "@/types/project.type";
 import { useState } from "react";
@@ -34,7 +33,7 @@ const ProjectContent = ({ projects }: { projects: TProject[] }) => {
               tab === "all" ? project : project.projectType === tab
             )
             .map((project) => (
-              <Link href={`products/${project._id}`} key={project._id}>
+              <Link href={`projects/${project._id}`} key={project._id}>
                 <div
                   className="relative p-6 bg-white text-center shadow-md hover:shadow-xl duration-100 group hover:scale-[1.05] "
                 >
@@ -91,6 +90,7 @@ const ProjectContent = ({ projects }: { projects: TProject[] }) => {
             ))}
         </div>
       </TabsContent>
+      
     </Tabs>
   );
 };
