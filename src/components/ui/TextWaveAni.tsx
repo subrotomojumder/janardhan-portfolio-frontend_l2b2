@@ -1,14 +1,16 @@
-import { Wave } from 'react-animated-text';
-
-const exampleStyle = {
-    display: 'inline-block',
-   
-}
-
+import Typewriter from "typewriter-effect";
+import "@/styles/textAnimation.module.css"
 
 
 export const Wave1 = ({ text }: { text: string }) => (
-    <div style={exampleStyle}>
-        <Wave text={text} effect="stretch" effectChange={1.5} speed={5} />
-    </div>
-)
+  <div>
+    <Typewriter
+      options={{
+        strings: [text],
+        autoStart: true,
+        deleteSpeed: 200,
+        loop: true,
+      }}
+    />
+  </div>
+);

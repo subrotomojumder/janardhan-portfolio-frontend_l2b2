@@ -12,7 +12,7 @@ const Blogs = async () => {
   return (
     <div
       id="blog"
-      className="min-h-screen flex flex-col justify-center py-32 lg:py-40 px-8 md:px-20 space-y-16 relative"
+      className="min-h-screen flex flex-col justify-center py-32 lg:py-40 px-4 md:px-16 space-y-16 relative"
     >
       <div className="space-y-3">
         <p className="text-xs text-slate-400 font-mono">READ</p>

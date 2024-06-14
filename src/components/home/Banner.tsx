@@ -99,15 +99,15 @@ const Banner = () => {
                         ? ""
                         : width > 768
                         ? `linear-gradient(90deg, rgba(249, 250, 250, 100), rgba(249, 250, 250, 90), rgba(249, 250, 250, 0.90), rgba(249, 250, 250, 0.0), rgba(249, 250, 250, 0.0)), url(${item.bg})`
-                        : `linear-gradient(to bottom, rgba(135, 227, 208, 0.80), rgba(135, 227, 208, 0.88), rgba(249, 250, 250, 0.80), rgba(249, 250, 250, 0.30), rgba(249, 250, 250, 0.0)), url(${item.smBg})`,
+                        : `linear-gradient(to bottom, rgba(135, 227, 208, 0.70), rgba(135, 227, 208, 0.78), rgba(249, 250, 250, 0.70), rgba(249, 250, 250, 0.20), rgba(249, 250, 250, 0.0)), url(${item.smBg})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                   }}
                   className={`md:h-screen md:max-h-[600px] xl:max-h-[700px] flex flex-col md:justify-center bg-gradient-to-r from-white via-white to-transparent bg-no-repeat bg-cover`}
                 >
-                  <div className="px-8 md:px-20 pt-32 md:pt-0 pb-10 space-y-4 text-center md:text-left">
-                    <h1 className="text-4xl md:text-6xl font-semibold leading-tight lg:leading-snug font-serif">
+                  <div className="px-4 md:px-16 pt-32 md:pt-0 pb-10 space-y-4 text-center md:text-left">
+                    <h1 className="text-3xl md:text-6xl font-semibold leading-tight lg:leading-snug font-serif">
                       {item.heading1}
                       <br />
 

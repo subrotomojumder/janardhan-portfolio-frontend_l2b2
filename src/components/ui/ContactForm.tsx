@@ -3,7 +3,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -15,7 +14,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./textarea";
 import { LuSend } from "react-icons/lu";
-// import { toast } from "@/components/ui/use-toast"
+import { toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+import { emailJsSend } from "@/services/actions/emailJsSend";
 
 const FormSchema = z.object({
   name: z.string().min(2),
@@ -25,6 +27,7 @@ const FormSchema = z.object({
 });
 
 const ContactForm = () => {
+  // const formRef = useRef<string | HTMLFormElement>();
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -34,17 +37,48 @@ const ContactForm = () => {
       message: "",
     },
   });
-
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(data);
-    // toast({
-    //   title: "You submitted the following values:",
-    //   description: (
-    //     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-    //       <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-    //     </pre>
-    //   ),
-    // });
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
+    const templateParams = {
+      from_name: data.name,
+      from_email: data.email,
+      subject: data.subject,
+      message: data.message,
+    };
+    // console.log(templateParams);
+    try {
+      const res = await emailjs.sendForm(
+        "service_gr5i6oo",
+        "template_fj4yy5p",
+        JSON.stringify(templateParams),
+        { publicKey: "lJzEwIdVoxi-GChks" }
+      );
+      //       EMAILJS_SERVICEID=service_gr5i6oo
+      // EMAILJS_TEMPLATEID=template_fj4yy5p
+      // EMAILJS_PUBLIC_KEY=lJzEwIdVoxi-GChks
+      if (res) {
+        console.log(res);
+      }
+    } catch (error: any) {
+      console.log(error);
+      alert(error.message || "Something went wrong !!");
+    }
+    // emailjs
+    //   .sendForm(
+    //     process.env.EMAILJS_SERVICEID as string,
+    //     process.env.EMAILJS_TEMPLATEID as string,
+    //     formRef.current,
+    //     process.env.EMAILJS_PUBLIC_KEY as string
+    //   )
+    //   .then(
+    //     (result) => {
+    //       console.log(result);
+    //       toast.success("Success your email send. Thanks!");
+    //     },
+    //     (error) => {
+    //       console.log(error);
+    //       toast.error(error.text);
+    //     }
+    //   );
   }
 
   return (
@@ -64,14 +98,7 @@ const ContactForm = () => {
                   type="text"
                   placeholder="Name"
                   className="border-none text-base rounded-none focus:outline-none focus:ring-0 focus-visible:ring-0 b ring-offset-0 bg-purple-100 py-7 px-4 shadow-sm placeholder:text-gray-400"
-                  data-aos-offset="200"
-    data-aos-delay="50"
-    data-aos-duration="1000"
-    data-aos-easing="ease-in-out"
-    data-aos-mirror="true"
-    data-aos-once="false"
-    data-aos-anchor-placement="top-center"
-
+                  data-aos="fade-left"
                 />
               </FormControl>
               <FormMessage />
@@ -138,7 +165,7 @@ const ContactForm = () => {
           data-aos="fade-left"
         >
           <LuSend />
-           <span>Send Message</span>
+          <span>Send Message</span>
         </Button>
       </form>
     </Form>

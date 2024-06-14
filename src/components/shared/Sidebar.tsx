@@ -1,41 +1,35 @@
 "use client";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import SidebarContent from "../ui/SidebarContent";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-// import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Sidebar = () => {
+  const path = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-//   const router = useRouter();
-
-//   const handleRouteChange = () => {
-//     setIsOpen(false);
-//   };
-
-//   useEffect(() => {
-//     router.events.on("routeChangeStart", handleRouteChange);
-//     return () => {
-//       router.events.off("routeChangeStart", handleRouteChange);
-//     };
-//   }, [router]);
+  useEffect(() => {
+    setIsOpen(false);
+  }, [path]);
   return (
     <>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <div className="w-full md:hidden fixed top-0 left-0 z-10 py-2 px-4 flex justify-between items-center bg-[#2837c388] text-white">
+        <div className="w-full md:hidden fixed top-0 left-0 z-10 py-1 px-3 flex justify-between items-center bg-[#2837c3e8] text-white">
           <SheetTrigger>
             <RxHamburgerMenu size={26} />
           </SheetTrigger>
           <Link href={"/"}>
-            <h1 className="text-lg font-semibold font-serif">Janardhan</h1>
+            <div className="w-9 h-9 mx-auto rounded-full overflow-hidden object-center border-2 avatar border-gradient-to-t from-red-500 to-blue-600">
+              <Image
+                src={"https://i.ibb.co/DYMCF0N/IMG-20220710-130806-698.jpg"}
+                width={100}
+                height={100}
+                className="size-[130%] object-cover"
+                alt="profile"
+              />
+            </div>
           </Link>
         </div>
         <SheetContent

@@ -22,7 +22,7 @@ const About = () => {
     <div
       id="about"
       // style={{ background: `linear-gradient(90deg, rgba(255, 0, 150, 0.3), rgba(63, 0, 149, 0.8)), url(https://i.ibb.co/vj3HVVc/DSC-0022.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundAttachment: 'center' }}
-      className="min-h-screen flex flex-col justify-center py-32 lg:py-40 space-y-16 px-8 md:px-20"
+      className="min-h-screen flex flex-col justify-center py-32 lg:py-40 space-y-16 px-4 md:px-16"
     >
       <div className="space-y-3">
         <p className="text-xs text-slate-400 font-mono">ABOUT US</p>
@@ -35,14 +35,14 @@ const About = () => {
         </h5>
       </div>
       <div className="space-y-4 font-sans text-slate-500">
-        <p data-aos="fade-up" data-aos-anchor-placement="bottom-center">
+        <p data-aos="fade-right" data-aos-anchor-placement="bottom-center">
           <b>Hi! I&apos;m Janardhan Majumder</b> working in Web Development for
           a long time, Expertise in HTML, CSS, and JavaScript to craft dynamic,
           user-centric digital experiences. With three years of experience,
           specializes in creating responsive, visually stunning websites that
           align with client objectives and industry standards.{" "}
         </p>
-        <p data-aos="fade-up" data-aos-anchor-placement="bottom-center">
+        <p data-aos="fade-left" data-aos-anchor-placement="bottom-center">
           Frontend and Backend development uses frameworks like NextJs, ReactJs
           and ExpressJs to create efficient, scalable solutions. Consistently
           delivers high-quality, intuitive web solutions that increase user
@@ -50,7 +50,7 @@ const About = () => {
         </p>
       </div>
       <div
-        className="md:flex justify-between space-y-10 md:space-y-0"
+        className="md:flex justify-between space-y-10 md:space-y-0 mx-6 lg:mx-10"
         // style={{ background: `linear-gradient(to top, rgba(255, 0, 150, 0.3), rgba(63, 0, 149, 0.8)), url(https://i.ibb.co/zsDVY69/cover-bg-1-jpg.jpg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed', backgroundPositionY: "center" }}
       >
         {topStatus.map((status, index) => (
@@ -71,8 +71,8 @@ const About = () => {
           </div>
         ))}
       </div>
-      <div className="bg-yellow-500/90 px-8 py-12 text-center text-white">
-        <h3 className=" text-center text-2xl md:text-3xl font-serif leading-snug mb-8">
+      <div className="bg-yellow-500/90 px-4 md:px-8 py-12 text-center text-white">
+        <h3 className=" text-center text-xl md:text-4xl font-serif leading-relaxed md:leading-loose mb-8">
           I am happy to know you <br /> that 50+ projects done successfully!
         </h3>
         <div className="mb-8">
@@ -81,7 +81,7 @@ const About = () => {
             <a href="tel:+8801631901754" target="blank">
               <Button
                 variant="link"
-                className="text-base tracking-wide text-white"
+                className="text-sm md:text-base tracking-wide text-white"
               >
                 +880 1631-901754
               </Button>
@@ -92,7 +92,7 @@ const About = () => {
             <a href="mailto:janardhan.md03@gmail.com" target="blank">
               <Button
                 variant="link"
-                className="text-base tracking-wide text-white"
+                className="text-sm md:text-base tracking-wide text-white"
               >
                 janardhan.md03@gmail.com
               </Button>
@@ -103,7 +103,7 @@ const About = () => {
             <a href="https://maps.app.goo.gl/LxRxvCxovRvPQ3sv9" target="blank">
               <Button
                 variant="link"
-                className="text-base tracking-wide text-white"
+                className="text-sm md:text-base tracking-wide text-white"
               >
                 Noakhali , Bangladesh
               </Button>

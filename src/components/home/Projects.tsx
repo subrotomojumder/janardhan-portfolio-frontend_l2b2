@@ -10,7 +10,7 @@ const Projects = async () => {
   return (
     <div
       id="project"
-      className="min-h-screen flex flex-col justify-center py-32 px-8 md:px-20 space-y-16 relative"
+      className="min-h-screen flex flex-col justify-center py-32 px-4 md:px-16 space-y-16 relative"
       style={{
         background: `linear-gradient(90deg, rgba(255, 99, 71, 0.1), rgba(0, 0, 0, 0)), url(https://i.ibb.co/NsvqYx8/category-BG.jpg)`,
         backgroundSize: "cover",

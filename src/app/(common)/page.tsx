@@ -8,7 +8,7 @@ import WorkExperience from "@/components/home/WorkExperience";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-hidden">
       <Banner />
       <About />
       <Skills />

@@ -21,10 +21,9 @@ const Skills = async () => {
   return (
     <div
       id="skills"
-      className="min-h-screen flex flex-col justify-center py-20 lg:py-20 px-8 md:px-20 space-y-16 relative bg-yellow-50"
-      
+      className="min-h-screen flex flex-col justify-center py-20 lg:py-20 space-y-16 relative"
     >
-      <div className="space-y-3">
+      <div className="space-y-3 px-4 md:px-16">
         <p className="text-xs text-slate-400 font-mono">MY SPECIALTY</p>
         <h5
           className="text-lg md:text-xl font-medium font-serif text-slate-600"
@@ -34,7 +33,7 @@ const Skills = async () => {
           MY SKILLS
         </h5>
       </div>
-      <div className="space-y-10">
+      <div className="space-y-10 px-4 md:px-16">
         <p
           className="text-slate-500"
           data-aos="fade-up"
@@ -48,7 +47,7 @@ const Skills = async () => {
         <div className="border-t pt-10">
           <SkillContent skills={data} />
         </div>
-        <div className="bg-gray-100 py-1 px-2">
+        <div className="bg-gray-100 py-1 px-2 font-medium text-sm md:text-base">
           <p>
             Tools : VS code, Figma, Postman, MongoDBCompass, Netlify, Github,
             Vercel, Microsoft-Office-Applications.
@@ -56,7 +55,7 @@ const Skills = async () => {
         </div>
       </div>
       <div
-        className="w-full flex justify-evenly gap-10 py-5 mt-5"
+        className="w-full flex justify-evenly gap-10 py-5 mt-5 px-4 md:px-16"
         style={{
           background: `linear-gradient(90deg, rgba(255, 0, 150, 0.6), rgba(63, 0, 149, 0.5)), url(https://i.ibb.co/VHVjVfx/skills.png)`,
           backgroundSize: "100%",
@@ -68,7 +67,7 @@ const Skills = async () => {
         {logos.map((logo: { image: string }, i) => (
           <div
             key={i}
-            className="w-28 h-28 overflow-hidden object-center"
+            className="w-16 md:w-28 h-16 md:h-28 overflow-hidden object-center"
             data-aos="zoom-in"
           >
             <Image
