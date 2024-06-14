@@ -2,7 +2,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { ToastContainer } from "react-toastify";
+import { Toaster } from 'sonner';
 
 export function Providers({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -10,8 +10,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
   }, []);
   return (
     <div>
+      <Toaster />
       {children}
-      <ToastContainer />
     </div>
   );
 }

@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.3.3",
     "@hookform/resolvers": "^3.4.2",
     "@radix-ui/react-aspect-ratio": "^1.0.3",
     "@radix-ui/react-dialog": "^1.0.5",
@@ -33,8 +32,9 @@
     "react-lottie": "^1.2.4",
     "react-skillbars": "^2.2.0",
     "react-stars": "^2.2.5",
-    "react-toastify": "^10.0.5",
+    "resend": "^3.3.0",
     "sharp": "^0.33.4",
+    "sonner": "^1.5.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "typewriter-effect": "^2.21.0",

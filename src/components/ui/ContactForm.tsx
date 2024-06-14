@@ -14,10 +14,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./textarea";
 import { LuSend } from "react-icons/lu";
-import { toast } from "react-toastify";
-import emailjs from "@emailjs/browser";
-import { useRef } from "react";
-import { emailJsSend } from "@/services/actions/emailJsSend";
+import { toast } from "sonner";
+import { sendEmail } from "@/services/actions/sendEmail";
 
 const FormSchema = z.object({
   name: z.string().min(2),
@@ -27,7 +25,6 @@ const FormSchema = z.object({
 });
 
 const ContactForm = () => {
-  // const formRef = useRef<string | HTMLFormElement>();
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -37,48 +34,28 @@ const ContactForm = () => {
       message: "",
     },
   });
-  async function onSubmit(data: z.infer<typeof FormSchema>) {
-    const templateParams = {
-      from_name: data.name,
-      from_email: data.email,
-      subject: data.subject,
-      message: data.message,
-    };
-    // console.log(templateParams);
+  async function onSubmit(formData: z.infer<typeof FormSchema>) {
+    const toastId = toast.loading("Sending Message....");
     try {
-      const res = await emailjs.sendForm(
-        "service_gr5i6oo",
-        "template_fj4yy5p",
-        JSON.stringify(templateParams),
-        { publicKey: "lJzEwIdVoxi-GChks" }
-      );
-      //       EMAILJS_SERVICEID=service_gr5i6oo
-      // EMAILJS_TEMPLATEID=template_fj4yy5p
-      // EMAILJS_PUBLIC_KEY=lJzEwIdVoxi-GChks
-      if (res) {
-        console.log(res);
+      const { data, error } = await sendEmail(formData);
+      if (data) {
+        form.reset();
+        toast.error("Successfully Send The Message", {
+          id: toastId,
+          duration: 1000,
+        });
+      } else if (error) {
+        toast.error(error.message, {
+          id: toastId,
+          duration: 1000,
+        });
       }
     } catch (error: any) {
-      console.log(error);
-      alert(error.message || "Something went wrong !!");
+      toast.error(error.message, {
+        id: toastId,
+        duration: 1500,
+      });
     }
-    // emailjs
-    //   .sendForm(
-    //     process.env.EMAILJS_SERVICEID as string,
-    //     process.env.EMAILJS_TEMPLATEID as string,
-    //     formRef.current,
-    //     process.env.EMAILJS_PUBLIC_KEY as string
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result);
-    //       toast.success("Success your email send. Thanks!");
-    //     },
-    //     (error) => {
-    //       console.log(error);
-    //       toast.error(error.text);
-    //     }
-    //   );
   }
 
   return (
