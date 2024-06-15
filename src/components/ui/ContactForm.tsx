@@ -40,18 +40,18 @@ const ContactForm = () => {
       const { data, error } = await sendEmail(formData);
       if (data) {
         form.reset();
-        toast.error("Successfully Send The Message", {
+        toast.success("Successfully Send Message. Thanks!", {
           id: toastId,
           duration: 1000,
         });
       } else if (error) {
-        toast.error(error.message, {
+        toast.error("Something went wrong!", {
           id: toastId,
           duration: 1000,
         });
       }
     } catch (error: any) {
-      toast.error(error.message, {
+      toast.error("Something went wrong!", {
         id: toastId,
         duration: 1500,
       });

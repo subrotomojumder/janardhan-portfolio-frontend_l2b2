@@ -22,7 +22,7 @@ const ProjectDetailsImage = ({ images, className }: TImageProps) => {
           className="w-full h-full"
         />
       </div>
-      <div className="md:order-first col-span-1 flex md:flex-col justify-center lg:justify-center gap-2 md:gap-4 py-4 px-4 md:px-0 md:pr-5">
+      <div className="md:order-first col-span-1 flex md:flex-col justify-center lg:justify-center gap-2 md:gap-4 py-7 md:py-4 px-4 md:px-0 md:pr-5">
         {images.map((image: string, i: number) => (
           <div
             key={i}

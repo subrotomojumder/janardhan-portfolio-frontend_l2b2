@@ -2,9 +2,8 @@ import Rating from "@/components/ui/Rating";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import ProjectDetailsImage from "@/components/ui/projectDetails/projectDetailsImage";
-import { Car, Droplets, Repeat1, TimerReset } from "lucide-react";
+import {  Droplets, TimerReset } from "lucide-react";
 import { Metadata } from "next";
-import Link from "next/link";
 
 type TProjectDetailsProps = {
   params: {
@@ -23,7 +22,7 @@ const ProductDetails = async ({ params }: TProjectDetailsProps) => {
   const { data: project } = await res.json();
   return (
     <div
-      className="min-h-screen flex flex-col justify-center pt-16 md:pt-12 pb-32 space-y-16 relative"
+      className="min-h-screen flex flex-col justify-center pt-16 md:pt-12 pb-32 space-y-6 md:space-y-16 relative"
       //  style={{
       //   background: `linear-gradient(90deg, rgba(255, 99, 71, 0.1), rgba(0, 0, 0, 0)), url(https://i.ibb.co/NsvqYx8/category-BG.jpg)`,
       //   backgroundSize: "cover",
@@ -37,17 +36,17 @@ const ProductDetails = async ({ params }: TProjectDetailsProps) => {
           className="px-5 md:px-10"
         />
       )}
-      <div className="py-6 px-10 md:px-20 space-y-7">
+      <div className="py-6 px-4 md:px-20 space-y-7">
         <div className="space-y-4">
           <h3 className="text-3xl font-bold">{project.title}</h3>
-          <div className="flex justify-start items-center gap-5">
+          <div className="flex flex-wrap justify-start items-center gap-5">
             <h5 className="text-xl font-bold capitalize text-slate-600">
               {project.projectType}
             </h5>
             <div className="h-3.5 w-0.5 bg-gray-400" />
             <Rating rate={4} size={24} />
             <div className="h-3.5 w-0.5 bg-gray-400" />
-            <span className="text-sm text-green-500">(43 Reviews)</span>
+            <span className="text-sm text-green-500 whitespace-nowrap">(43 Reviews)</span>
           </div>
         </div>
         <div className="h-[1.5px] bg-gray-200" />
@@ -84,7 +83,7 @@ const ProductDetails = async ({ params }: TProjectDetailsProps) => {
           </div>
         </div>
 
-        <div className="space-y-2 text-sm font-medium text-gray-700">
+        <div className="space-y-2 text-sm font-medium text-gray-700 pt-4">
           <div className="flex justify-start gap-3">
             <Droplets />
             <span>

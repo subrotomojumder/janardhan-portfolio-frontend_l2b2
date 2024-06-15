@@ -1,18 +1,22 @@
 "use client";
+
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import SidebarContent from "../ui/SidebarContent";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
+// import { useRouter } from "next/router";
+import { usePathname, useSearchParams } from "next/navigation";
 
 const Sidebar = () => {
-  const path = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
   useEffect(() => {
     setIsOpen(false);
-  }, [path]);
+  }, [pathname, searchParams]);
   return (
     <>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
