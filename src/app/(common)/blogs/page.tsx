@@ -52,11 +52,6 @@ const AllBlogs = async () => {
               <p className="text-sm text-slate-600 leading-6 line-clamp-6 text-justify">
                 {blog.des}
               </p>
-              {/* <ul className="space-y-1 list-disc text-sm font-medium text-gray-700 pl-2">
-                      {blog.desBullet?.map((bullet: string, inx: number) => (
-                        <li key={inx}>{bullet}</li>
-                      ))}
-                    </ul> */}
             </div>
           </Link>
         ))}

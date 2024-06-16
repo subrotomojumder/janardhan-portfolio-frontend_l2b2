@@ -2,7 +2,7 @@ import Rating from "@/components/ui/Rating";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import ProjectDetailsImage from "@/components/ui/projectDetails/projectDetailsImage";
-import {  Droplets, TimerReset } from "lucide-react";
+import { Droplets, TimerReset } from "lucide-react";
 import { Metadata } from "next";
 
 type TProjectDetailsProps = {
@@ -46,7 +46,9 @@ const ProductDetails = async ({ params }: TProjectDetailsProps) => {
             <div className="h-3.5 w-0.5 bg-gray-400" />
             <Rating rate={4} size={24} />
             <div className="h-3.5 w-0.5 bg-gray-400" />
-            <span className="text-sm text-green-500 whitespace-nowrap">(43 Reviews)</span>
+            <span className="text-sm text-green-500 whitespace-nowrap">
+              (43 Reviews)
+            </span>
           </div>
         </div>
         <div className="h-[1.5px] bg-gray-200" />
