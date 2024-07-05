@@ -22,7 +22,7 @@ const Footer = () => {
           <a href="mailto:janardhan.md03@gmail.com" target="blank">
             <Button
               variant="link"
-              className="text-gray-300 text-center text-sm py-0 px-1.5"
+              className="text-gray-300 text-center text-sm py-0 px-1.5 line-clamp-1"
             >
               janardhan.md03@gmail.com
             </Button>

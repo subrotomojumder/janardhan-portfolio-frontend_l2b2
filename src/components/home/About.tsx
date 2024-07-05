@@ -92,7 +92,7 @@ const About = () => {
             <a href="mailto:janardhan.md03@gmail.com" target="blank">
               <Button
                 variant="link"
-                className="text-sm md:text-base tracking-wide text-white"
+                className="text-sm md:text-base tracking-wide text-white line-clamp-1"
               >
                 janardhan.md03@gmail.com
               </Button>

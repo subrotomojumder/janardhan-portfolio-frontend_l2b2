@@ -27,7 +27,7 @@ const ProjectContent = ({ projects }: { projects: TProject[] }) => {
         </p>
       </div>
       <TabsContent value={tab}>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-24 mt-24 ">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-28 mt-24 ">
           {projects
             .filter((project) =>
               tab === "all" ? project : project.projectType === tab

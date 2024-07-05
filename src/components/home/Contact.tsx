@@ -21,7 +21,7 @@ const Contact = () => {
       link: "https://maps.app.goo.gl/LxRxvCxovRvPQ3sv9",
     },
   ];
-  
+
   return (
     <div
       id="contact"
