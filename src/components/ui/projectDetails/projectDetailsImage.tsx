@@ -12,8 +12,10 @@ type TImageProps = {
 const ProjectDetailsImage = ({ images, className }: TImageProps) => {
   const [imageIndex, setImageIndex] = useState(0);
   return (
-    <div className={cn("md:grid grid-cols-7 px-5 md:px-10", className)}>
-      <div className="bg-white col-span-6 shadow-lg shadow-inherit border border-green-500">
+    <div
+      className={cn("md:grid grid-cols-7 px-5 md:px-10 relative", className)}
+    >
+      <div className="lg:sticky top-4 left-0 h-fit bg-white col-span-6 shadow-lg shadow-inherit border border-green-500">
         <Image
           src={images[imageIndex]}
           width={1000}
@@ -22,7 +24,7 @@ const ProjectDetailsImage = ({ images, className }: TImageProps) => {
           className="w-full h-full"
         />
       </div>
-      <div className="md:order-first col-span-1 flex md:flex-col justify-center lg:justify-center gap-2 md:gap-4 py-7 md:py-4 px-4 md:px-0 md:pr-5">
+      <div className="md:order-first col-span-1 flex md:flex-col justify-center lg:justify-start gap-2 md:gap-4 py-7 md:py-4 px-4 md:px-0 md:pr-5">
         {images.map((image: string, i: number) => (
           <div
             key={i}
