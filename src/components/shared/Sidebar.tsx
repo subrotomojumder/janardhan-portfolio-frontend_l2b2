@@ -20,7 +20,7 @@ const Sidebar = () => {
   return (
     <>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <div className="w-full md:hidden fixed top-0 left-0 z-10 py-1 px-3 flex justify-between items-center bg-[#2837c3e8] text-white">
+        <div className="w-full md:hidden fixed top-0 left-0 z-10 py-2 px-3 flex justify-between items-center bg-[#2837c3e8] text-white">
           <SheetTrigger>
             <RxHamburgerMenu size={26} />
           </SheetTrigger>

@@ -24,13 +24,13 @@ const ProjectDetailsImage = ({ images, className }: TImageProps) => {
           className="w-full h-full"
         />
       </div>
-      <div className="md:order-first col-span-1 flex md:flex-col justify-center lg:justify-start gap-2 md:gap-4 py-7 md:py-4 px-4 md:px-0 md:pr-5">
+      <div className="max-h-14 lg:max-h-fit overflow-hidden md:order-first col-span-1 flex md:flex-col justify-center lg:justify-start gap-2 md:gap-4 py-7 md:py-4 px-4 md:px-0 md:pr-5">
         {images.map((image: string, i: number) => (
           <div
             key={i}
             onClick={() => setImageIndex(i)}
             className={cn(
-              "bg-white p-0.5 md:p-1 border border-blue-300 hover:border-blue-500 rounded-sm opacity-70 hover:opacity-100 cursor-pointer overflow-hidden max-w-20 md:max-w-full max-w-h-20",
+              "h-fit bg-white p-0.5 md:p-1 border border-blue-300 hover:border-blue-500 rounded-sm opacity-70 hover:opacity-100 cursor-pointer overflow-hidden max-w-20 md:max-w-full max-w-h-20",
               {
                 "opacity-100 border-blue-500": imageIndex === i,
               }

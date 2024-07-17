@@ -31,7 +31,7 @@ const Contact = () => {
       //   backgroundRepeat: "no-repeat",
       //   backgroundAttachment: "fixed",
       // }}
-      className="min-h-screen flex flex-col justify-center py-32 lg:py-40 px-4 md:px-16 space-y-16 relative bg-yellow-50"
+         className="min-h-screen flex flex-col justify-center py-32 lg:py-40 px-4 md:px-16 space-y-16 bg-yellow-50"
     >
       <div className="space-y-3">
         <p className="text-xs text-slate-400 font-mono">GET IN TOUCH</p>
